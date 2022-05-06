@@ -54,8 +54,12 @@ public class IoNetworkBasic {
              BufferedReader reader = new BufferedReader(fileReader)) {
 
             String nextLine = "";
-            for (int i = 0; nextLine != null ; i++) {
+            for (int i = 0; ; i++) {
                 nextLine = reader.readLine();
+
+                if (nextLine == null) {
+                    break;
+                }
 
                 if (i % 2 == 0) {
                     System.out.println(nextLine);
